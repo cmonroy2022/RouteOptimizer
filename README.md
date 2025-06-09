@@ -1,30 +1,95 @@
-# Temuco mapa con marcadores
+#  RouteOptimizer - Temuco
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+**RouteOptimizer** es una aplicación web que permite optimizar rutas de visitas en la ciudad de Temuco, Chile. Sube un archivo Excel con coordenadas geográficas, selecciona un área en el mapa y genera una ruta optimizada basada en calles reales.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/cmonroy2022s-projects/v0-temuco-mapa-con-marcadores)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/q0594CRg4PS)
+---
 
-## Overview
+## 🔐 Inicio de sesión
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+Para comenzar, el usuario debe iniciar sesión en la plataforma con sus credenciales.
 
-## Deployment
+![Login](./images/login.png)
 
-Your project is live at:
+---
 
-**[https://vercel.com/cmonroy2022s-projects/v0-temuco-mapa-con-marcadores](https://vercel.com/cmonroy2022s-projects/v0-temuco-mapa-con-marcadores)**
+## 🧰 Funcionalidades
 
-## Build your app
+### 📁 Subida de archivo Excel
+Carga un archivo `.xlsx` que contenga las coordenadas de las ubicaciones. Se muestran automáticamente en el mapa como puntos geográficos.
 
-Continue building your app on:
+> **Formato requerido**:
+> El archivo debe contener al menos las siguientes columnas:
+> - `Latitud`
+> - `Longitud`
 
-**[https://v0.dev/chat/projects/q0594CRg4PS](https://v0.dev/chat/projects/q0594CRg4PS)**
+![Subida de archivo](./images/1.png)
 
-## How It Works
+---
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+### 🗺️ Visualización de ubicaciones
+Una vez cargado el archivo, se despliegan todas las ubicaciones en el mapa utilizando **Leaflet** y **OpenStreetMap**.
+
+![Visualización de ubicaciones](./images/2.png)
+
+---
+
+### 🔲 Selección de área
+Permite seleccionar un sector dibujando un rectángulo en el mapa. Las ubicaciones dentro del área se listan en el panel lateral.
+
+![Selección de sector](./images/3.png)
+
+---
+
+### 🧭 Cálculo de ruta real
+Se calcula la ruta óptima entre los puntos seleccionados, considerando calles reales, distancia y tiempo estimado.
+
+![Ruta real optimizada](./images/4.png)
+
+---
+
+### 📍 Ruta desde Mi Ubicación
+Puedes calcular la ruta partiendo desde tu ubicación actual, ideal para planificación en terreno.
+
+![Ruta desde Mi Ubicación](./images/5.png)
+
+---
+
+### 📌 Detalles de cada punto
+Puedes hacer clic en cada punto para ver detalles como distancia, orden en la ruta y estado de visita.
+
+![Detalles del punto](./images/6.png)
+
+---
+
+## 📂 Formato del archivo Excel
+
+El archivo debe tener al menos las siguientes columnas:
+
+| Latitud | Longitud |
+|---------|----------|
+| -38.735 | -72.590  |
+| -38.741 | -72.615  |
+
+---
+
+## ⚙️ Tecnologías utilizadas
+
+- **Frontend**: React + Leaflet.js
+- **Backend**: Python + FastAPI (opcional)
+- **Geocodificación**: No requerida (se trabaja directo con coordenadas)
+- **Ruteo**: OpenRouteService o OSRM API
+
+---
+
+## 🚀 Mejoras futuras
+
+- Exportar ruta a Google Maps
+- Gestión de visitas realizadas
+- Agrupamiento por zonas
+- Versión móvil optimizada
+
+---
+
+## 🧑‍💻 Autor
+
+Desarrollado por Carlos Ariel Monroy Oñate.
