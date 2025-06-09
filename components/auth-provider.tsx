@@ -34,12 +34,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   // Credenciales válidas
   const validCredentials = {
-    email: "mapaaguas@gmail.com",
-    password: "kiara123",
     userData: {
-      email: "mapaaguas@gmail.com",
-      name: "Administrador MapaAguas",
-      role: "admin",
     },
   }
 
